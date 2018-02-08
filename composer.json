@@ -1,0 +1,23 @@
+{
+    "name": "nfq-eta/time-duration-type",
+    "license": "mit",
+    "description": "Form type for durations",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Nfq\\Component\\TimeDuration\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Nfq\\Component\\TimeDuration\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "symfony/form": "^2.8|^3.0|^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    }
+}
