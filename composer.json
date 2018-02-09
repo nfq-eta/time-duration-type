@@ -1,6 +1,6 @@
 {
     "name": "nfq-eta/time-duration-type",
-    "license": "mit",
+    "license": "MIT",
     "description": "Form type for durations",
     "type": "library",
     "autoload": {
