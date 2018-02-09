@@ -57,6 +57,8 @@ class DurationTimeTransformer implements DataTransformerInterface
             throw new TransformationFailedException('Invalid data');
         }
 
+        $norm = (int)$norm;
+
         switch ($this->storeAs) {
             case TimeDurationType::STORE_MINUTES:
                 $minutes = $norm;
@@ -70,13 +72,13 @@ class DurationTimeTransformer implements DataTransformerInterface
                 throw new TransformationFailedException('Invalid data store option');
         }
 
-        $hours = str_pad(intdiv($minutes, 60), 2, 0, STR_PAD_LEFT);
-        $minutes = str_pad($minutes % 60, 2, 0, STR_PAD_LEFT);
+        $hours = str_pad((string)intdiv($minutes, 60), 2, '0', STR_PAD_LEFT);
+        $minutes = str_pad((string)($minutes % 60), 2, '0', STR_PAD_LEFT);
 
         $string = "{$hours}:{$minutes}";
 
         if ($this->displaySeconds || $seconds > 0) {
-            $seconds = str_pad($seconds, 2, 0, STR_PAD_LEFT);
+            $seconds = str_pad((string)$seconds, 2, '0', STR_PAD_LEFT);
             $string .= ":{$seconds}";
         }
 
